@@ -1,0 +1,18 @@
+.content{
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.image{
+    border-radius: 40px;
+    border: 2.5px solid rgb(70, 67, 67);
+    background-color: white;
+    padding: 2.5px;
+}
+
+.name{
+    font-size: 14px;
+    font-style: italic;
+}

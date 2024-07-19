@@ -11,7 +11,6 @@
 .body {
     display: flex;
     flex-direction: row;
-    height: 80vh;
 }
 
 .center {
@@ -21,10 +20,6 @@
 .social {
     display: flex;
     flex-direction: column;
-}
-
-.footer {
-
 }
 
 .btncta {
@@ -37,6 +32,13 @@
 .btnctaarea{
     text-align: center;
     padding: 15px 0 15px 0;
+}
+
+.ratingcontent {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
 }
 
 @media (max-width: 426px) {

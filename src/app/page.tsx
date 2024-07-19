@@ -1,8 +1,11 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { links, rating, textAprender, textPorque, textSobre, textSobreAulas } from "./texts";
-import { link } from "fs";
 import Link from "next/link";
+import { Avatar } from "./Components/Avatar";
+import { Comentario } from "./Components/Comentario";
+import { Title } from "./Components/Title";
+import {Text} from "./Components/Text";
 
 export default function Home() {
   return (
@@ -14,42 +17,45 @@ export default function Home() {
         <div className={styles.center}>
           <section about="Informações sobre o professor de programação" className="about">
             <article>
-              <h2>Sobre o professor</h2>
-              <p>
-                {textSobre}
-              </p>
+              <Title text="Sobre o professor"/>
+              <div style={{
+                display:"flex",
+                flexDirection:'row',
+                flexWrap:'wrap',
+                justifyContent:'center',
+                gap:'200px'
+              }}>
+                <Image src={'/perfil.jpeg'} alt="alt" width={300} height={300}/>
+                <Text text={textSobre}/>
+              </div>
             </article>
             <article>
-              <h2>O que você vai aprender?</h2>
-              <p>
-                {textAprender}
-              </p>
+              <Title text="O que você vai aprender?"/>
+              <Text text={textAprender}/>
             </article>
             <article>
-              <h2>Sobre as aulas</h2>
-              <p>
-                {textSobreAulas}
-              </p>
+              <Title text="Sobre as aulas"/>
+              <Text text={textSobreAulas}/>
             </article>
             <article>
-              <h2>Por que dou aula?</h2>
-              <p>
-                {textPorque}
-              </p>
+              <Title text="Por que dou aula?"/>
+              <Text text={textPorque}/>
             </article>
           </section>
-          <section about="Avaliações e comentários sobre o professor de programação" className="rating">
-            <h2>Avaliações e recomendações</h2>
-            {
-              rating.map((item,_idx)=>(
-                <>
-                  <article>
-                    <h3>{item.name}</h3>
-                    <p>{item.text}</p>
-                  </article>
-                </>
-              ))
-            }
+          <section about="Avaliações e comentários sobre o professor de programação" className={styles.rating}>
+            <Title text="Avaliações e recomendações"/>
+            <div className={styles.ratingcontent}>
+              {
+                rating.map((item,_idx)=>(
+                    <article key={_idx}>
+                      <Avatar name={item.name}>
+                        <Image src={'./vercel.svg'} alt="alt" width={40} height={40}/>
+                      </Avatar>
+                      <Comentario text={item.text}/>
+                    </article>
+                ))
+              }
+            </div>
           </section>
           <section about="Obtenha acesso às aulas de programação" className={styles.btnctaarea}>
             <Link href={links.superprof}>
@@ -76,13 +82,6 @@ export default function Home() {
           </span>
         </aside>
       </section>
-      <footer className={styles.footer}>
-        <p>
-          Copyright © Reytler Souza
-          <br />
-          Rmss &nbsp; - 2024
-        </p>
-      </footer>
     </main>
   );
 }
