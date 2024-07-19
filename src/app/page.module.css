@@ -18,8 +18,25 @@
     width: 95vw;
 }
 
+.social {
+    display: flex;
+    flex-direction: column;
+}
+
 .footer {
 
+}
+
+.btncta {
+    width: 300px;
+    padding: 15px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.btnctaarea{
+    text-align: center;
+    padding: 15px 0 15px 0;
 }
 
 @media (max-width: 426px) {
