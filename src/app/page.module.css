@@ -1,1 +1,33 @@
 
+.main{
+    padding: 10px 10px 0 10px;
+}
+
+.header {
+    text-align: center;
+    height: 10vh;
+}
+
+.body {
+    display: flex;
+    flex-direction: row;
+    height: 80vh;
+}
+
+.center {
+    width: 95vw;
+}
+
+.footer {
+
+}
+
+@media (max-width: 426px) {
+    .center {
+        width: 100vw;
+    }
+    .body {
+        display: flex;
+        flex-direction: column;
+    }
+}
